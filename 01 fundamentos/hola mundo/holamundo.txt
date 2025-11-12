@@ -158,4 +158,4 @@ entonces recodemos es importante evitar este tipo de codigo de JavaScript dentro
 
 y ademas poner el script justo antes de la etiqueta de cierre del </body> (para darle prioridad al html que cargue antes del JavaScript) y usar archivos externos de javascript  conectarlos usando 
 
-   <script src="./app.js"></script> (con el atributo src llamando al archivo en cuestion)..
+   <script src="./app.js"></script> (con el atributo src llamando al archivo en cuestion).d.
