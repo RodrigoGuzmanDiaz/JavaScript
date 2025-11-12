@@ -1,0 +1,2 @@
+ideas para las tarjetas talvez poner una linea o fragmento de codigo para comentarlo y acostrumbrarme a saber como poner comentarios
+ejercicios como ver un codigo y devolvera el codigo por ejemplo como en el mazo de python

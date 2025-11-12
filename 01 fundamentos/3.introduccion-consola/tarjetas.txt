@@ -1,0 +1,36 @@
+-podrias haceme ejercicios de comentar lineas de codigo o bloques de codigo para costumbrarme a comentar
+-ejercicios como declara la variable a con el valor de 4, varaible b con el valor de 'Rodrigo' esto hazlo en una sola instruccion
+(esto para acostrumbrarme a eclarar en una sola instruccion)
+let a = 4, 
+    b = 'Rodrigo', 
+
+-ejercicios como:
+con estas variables 
+let a = 10, 
+    b = 20, 
+    x = a+b;
+genera esta salida:
+{ a: 10 }
+{ b: 20 }
+{ x: 30 }
+
+esto para recordarme esta forma de mostrar en consola, usando las llaves asi console.log({a})
+
+-otra idea podria ser esta:
+con estas variables: 
+let a = 10, 
+    b = 20, 
+    c = 'Hola ', 
+    d = 'Rodrigo', 
+    x = a+b;
+genera esta salida:
+┌─────────┬───────────┐
+│ (index) │ Values    │
+├─────────┼───────────┤
+│ a       │ 10        │
+│ b       │ 20        │
+│ c       │ 'Hola '   │
+│ d       │ 'Rodrigo' │
+│ x       │ 30        │
+└─────────┴───────────┘
+y yo tengo que poner el console.table({a,b,c,d,x})

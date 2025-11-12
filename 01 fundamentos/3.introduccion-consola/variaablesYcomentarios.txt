@@ -1,0 +1,69 @@
+
+una forma de ver las variables junto son su valor se utiliza de la siguiente manera
+en lugar de estar haciendo esto
+let a = 10, 
+    b = 20, 
+    c = 'Hola', 
+    d = 'Rodrigo', 
+    x = a+b;
+
+console.log('a', a)
+console.log('b', b)
+console.log('x', x)
+
+esto en la consola del navegador se muestra asi:
+a 10
+b 20
+x 30
+
+
+la mejor forma de ver el nombre de la varaible y su valor es lo siguiente, encerandolo entre llaves:
+let a = 10, 
+    b = 20, 
+    c = 'Hola', 
+    d = 'Rodrigo', 
+    x = a+b;
+
+console.log({a})
+console.log({b})
+console.log({x})
+
+esto en la consola del nvegador se muestra asi:
+{a: 10}
+{b: 20}
+{x: 30}
+
+
+ahora existe otra forma que es usar el metodo .table, por ejemplo:
+let a = 10, 
+    b = 20, 
+    c = 'Hola', 
+    d = 'Rodrigo', 
+    x = a+b;
+console.table({a,b,c,d,x})
+en consola se muestra asi 
+┌─────────┬───────────┐
+│ (index) │ Values    │
+├─────────┼───────────┤
+│ a       │ 10        │
+│ b       │ 20        │
+│ c       │ 'Hola'    │
+│ d       │ 'Rodrigo' │
+│ x       │ 30        │
+└─────────┴───────────┘
+
+en muchos lenguajes de programacion se acostumbra a poner la constante en mayusculas 
+en lugar de hacer esto 
+const saludo = c+d; 
+
+usamos esto 
+const SALUDO = c+d;
+pero en JavaScript esto es una excepcion, en donde si debemos poner el nombre de la contantes capitalizadas(mayusculas) es cuando declaramos variables de entorno, es decir de manera global en mi aplicacion esa constante va a tener el mismo valor en todos los lugar de aplicacion 
+pero en este caso solo lo estamos usando como un contenedor de informacion y aqui no es necesario usarlo
+
+const saludo = c+d;
+console.log(saludo)
+
+esto sale en la consola:
+Hola Rodrigo
+

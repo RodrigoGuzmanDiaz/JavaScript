@@ -1,0 +1,161 @@
+----primer hola mundo ----
+como primero paso iremos al navegador de nuestra preferencia y no iremos al apartado de developer tools u otra opcion es usar el f12 para abrir este apartado nos iremos al apartado de "Console" y escribiremos los siguiente console.log('Hola Mundo'); 
+esta como tal es la aplicacion mas secilla que se puede hacer en los lenguajes d eprogramaicon y asi es como lo hacemos en JavaScript
+otra forma de uitlizar java es del lado del servidor y esto se logra usando node.js es importante tener instalado node ya que al ejecutar el comando de node --version tiene que devolver la version de node que tenemos 
+uan vez que ya tengamos node.js instalado abriremos una terminal (puede se cualquiera la se sus sistema operativo) lo que haremos es scribir el comando node
+esto no permitira hacer un console.log del lado del servidor sin la necesidad de usar un navegador para usar JavaScript
+Node como se sabe nos permite correr JavaScript fuera del navegador web 
+este es un ejemplo del hola mundo usando node desde la terminal
+console.log('hola mundo');
+hola mundo
+undefined
+
+ahora haremos un ejemplo basico de usar JavaScript del lado de servidor usando node 
+
+vamos a crear un archivo simple de JavaScript y lo llamaremos app.js
+y vamo a poner un hola mundo en JavaScript 
+
+console.log('Hola mundo');
+
+posteriormente a eso usaremos node para ver el resultado de dicho archivo para ver el resultado que devulve el codigo de JavaScript
+
+en la vscode abrimos una terminal (en la ruta en donde se encuentra dicho archivo que acabamos de acrear) y poner el siguiene comando en la terminal 
+
+node app.js
+
+al ejecutar este comando seremos capaces de apreciar el resultado que devuelve dicho archivo asi se vería en nuestro caso
+rodri@User MINGW64 ~/Documents/Apuntes/curso javascript/01 fundamentos
+$ node app.js
+Hola mundo
+
+
+
+veamos mas manera de ejcutar JavaScript
+vamoa crear un archivo llamado index.html
+
+y vamos a agregar una estrucutra basica para una web 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba JS</title>
+</head>
+<body>
+    
+
+</body>
+</html>
+
+ahora vamos a agregar el hola mundo hecho en JavaScript es muy importante usar la etiqeuta     <script> debido a que esta etiqueta es la que no permite agregarle JavaScript a un arhcivo html y de esta manera se pueda reconocer el lenguaje
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba JS</title>
+</head>
+<body>
+    
+
+    <script>
+        console.log('Hola mundo en HTML');
+    </script>
+
+</body>
+</html>
+
+y abrimos la ruta del html en neustro navegador y presionamos F12 e iremos al apartado de console para poder apreciar el 
+index.html:13 Hola mundo en HtML
+
+
+ahora hay que aclarar que mezclar html y javascript en un solo arhcivo es considerado mala practica por lo tanto lo recomendable es trabajar html en los archivos destinado de html y el javascript trabajarlos en archivos hecho solo apara usar js entonces 
+en lugar de usar js asi 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba JS</title>
+</head>
+<body>
+    
+
+    <script>
+        console.log('Hola mundo en HTML');
+    </script>
+
+</body>
+</html>
+
+lo ideal es usarlo así usando el 
+index.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba JS</title>
+</head>
+<body>
+    
+
+   <script src="./app.js"></script>
+
+</body>
+</html>
+
+app.js
+console.log('Hola mundo');
+
+usando el <script src="./app.js"></script> entre las comillas debermos puner la ruta del archivo de javascript a utilizar 
+
+DATO IMPORTANTE lo recomendable para usar poner la etiqueta de script es dejar casi al final del html (justo antes del cierre de la etiqueta </body>) como se ve en el siguiente ejemplo 
+index.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba JS</title>
+</head>
+<body>
+    
+
+   <script src="./app.js"></script>
+</body>
+</html>
+
+no es para nada recomendadable poner el el script en el head (aunque si se puede) 
+oomo se ve en este ejemplo 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba JS</title>
+    
+   <script src="./app.js"></script>
+</head>
+<body>
+    
+
+
+</body>
+</html>
+
+si se puede realizar pero no para nada recomendable hacer esto debido a que al momento de que se empiece a cargar la pagina lo que hace el navegador es ejecutar linea por linea al momento de encontrar el script en la primeras lineas del html lo que hará es que dará prioridad al script antes de cargar la propia pagina de HTML entonces si por ejemplo tenemos archivo JavaScript algo pesados o si el JavaScript tiene algun tipo de codigo que bloquea la ejecucion de JavaScript nuestro sitio web no se va a renderizar hasta que el todo el codigo de javascript termine va a dar la impresion de qu emi sitio web es lento 
+
+entoncer es importante recordar que primero es crear todo el html y por ultimo se ejecute el codigo de javascript que nuestro usuario final no va a ver simplemente va a interactuar codigo de javascript pero el no lo vé 
+
+
+
+entonces recodemos es importante evitar este tipo de codigo de JavaScript dentro del html (a menos que sea completamente necesario)
+
+ <script>
+        console.log('Hola mundo');
+    </script>
+
+y ademas poner el script justo antes de la etiqueta de cierre del </body> (para darle prioridad al html que cargue antes del JavaScript) y usar archivos externos de javascript  conectarlos usando 
+
+   <script src="./app.js"></script> (con el atributo src llamando al archivo en cuestion).

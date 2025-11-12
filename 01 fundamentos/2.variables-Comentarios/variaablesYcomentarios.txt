@@ -1,0 +1,47 @@
+-----comentarios----
+los comentarios son pedazos del codigo que el lenguaje de programacion ignora,
+por lo regular los utilizamos para ayudar al desarrollado ya sean para explicar el codigo en cuestion, o tambien si queremos que se ignore temporalmente un pedazo del codigo que estamos desarrolando
+para poner un se usan dos formas:
+//
+/**/
+
+la primera forma es para comentar una linea por ejemplo:
+// console.log('Hola mundo');
+(este una buena practica dejar un espacion entre las diagonales y el condigo en cuestion como en el ejemplo anterior)
+
+la segunda forma es para comentar un fragmento o pedazo de codigo por ejemplo:
+/*
+console.warn('Ten cuidado')
+console.error('Error!')
+*/
+
+----variables---
+la varaibles con espacios en memoria en pocas palabras
+existe dos formas de declarar variables
+
+let a = 10;
+const c = 10;
+
+
+"const" crea una variable que no puede cambiar su valor en cambio "let" nos permite crear una variable y podemos modificar su valor 
+existe otra forma utiliznado "var" pero esto ya no se usa y no es recomendable, era la forma antiguade declarar variables, pero la inicializacion de variables si soporta "var"  pero esto es considerado mala practica, lo podemos llegar a ver en codigo antiguos pero ya no se usa, de ahora en adelante debemos usar "let" en lugar de "var"
+
+vamos a declarar 5 variables pero hacerlo de esta manera no es cosiderado mala practica solo que exiten manera mejores de y menos tardadas de declarar varias variables en una sola instruccion
+let a = 10;
+let b = 20;
+let c = 30;
+let d = 40;
+let x = a +b;
+
+como por ejemplo esta menra que simplifica el estar escribiendo let para cada variables
+let a = 10, b = 20, c = 30, d = 40, x = a+b;
+
+al ver las dos formas hacen exactamente los mismo pero esta forma no es tan legibles en especial si se declara gran cantidad de variables, pero existe otra forma mas legible y es la mas recomendada para usar
+let a = 10, 
+    b = 20, 
+    c = 30, 
+    d = 40, 
+    x = a+b;
+
+hace lo mismo que las formas enteriores pero esta es la mejor forma y la mas recomendad para utilizar si se declaran variables variables y hacerlo bastante legible
+

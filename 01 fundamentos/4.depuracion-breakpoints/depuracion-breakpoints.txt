@@ -1,0 +1,7 @@
+saber depurar es muy importante porque podemos llegar a saber que linea o fragmento de codigo esta causando un error o algo que no deberia estar pasando
+existe dos formas de hacerlo con el navegador y con node(en el equipo local)
+para esto necesitamos ir al apartado, de sources en el navegador y dar click a la linea en donde queremos empezar (estos son los breackpoints)
+breackpoints.png
+
+y usando node podemos hacerlo de manera local sin depender del navegador
+para hacer vamos al apartado de Run, Start debugging (porfavor explicar para que sirve cada opcion usa la imagen de opciones.png y debugging-con-node.png)
