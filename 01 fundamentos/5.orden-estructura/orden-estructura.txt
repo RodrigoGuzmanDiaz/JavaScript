@@ -1,0 +1,192 @@
+ok empecemos hablando del orden que debemos seguir ya sean para que nuestra aplicacion tenga mejor rendimiento es importante tener unas consideraciones
+supongamos que tenemos esta estructura de nuestro html
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>orden y estructura</title>
+</head>
+<body>
+    <h1>Hola mundo</h1>
+
+    <p>este es un parrafo</p>
+
+    <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+</body>
+</html>
+
+pero ahora vamos a importar el archivo js para poder utilizarlo ahora veremos en donde es recomendado posicionarlo y porque,
+
+la primera posicion es 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>orden y estructura</title>
+</head>
+<body>
+    <h1>Hola mundo</h1>
+
+    <p>este es un parrafo</p>
+
+    <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+</body>
+</html>
+
+ahora vamos a ver como deberiamos posicionar el script para porder conectar el archivo js a nuestro html
+la primera posicion es dentro del <head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>orden y estructura</title>
+    <script src="app.js"></script>
+</head>
+<body>
+    <h1>Hola mundo</h1>
+
+    <p>este es un parrafo</p>
+
+    <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+</body>
+</html>
+
+pero hay que tomar una consideracion que este al momento que el navegador carga nuestra pagina lo que hará el ir linea por liena por lo tanto el <script src="app.js"></script> cargará antes del contenido html que pusimos dentro del <body> por lo tanto no es recomendado posicionarlo asi aun que si es valido ponerlo dentro del <head>
+ponerlo dentro del <head> es normal cuando usamos frameworks ya sea de css como bootstrap o tailwind donde necesitamos que este script cargue antes de mostrar el contenido de la pagina
+(por favor lista forma en donde es reocmendado poner el script en el head para buenas practicas consejos profecionales y eso)
+
+ahora vamos a ver la segunda forma de posicionar y la reocmendada si trabajamos con archivos.js locales y es antes de la etiqueta de cierre del body es decir, justo antes del </body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>orden y estructura</title>
+</head>
+<body>
+    <h1>Hola mundo</h1>
+
+    <p>este es un parrafo</p>
+
+    <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+
+    <script src="./app.js"></script>
+</body>
+</html>
+
+recordando que al momento que el navegador cargue la pagina, el navegador lo hace linea por linea lo cual al ponerlo antes de la etiqueta de cierre del </body>, lo que hará es cargar primero el contenido html antes del contenido del archivo js lo que hará que el usuario al menos vea primero la cara de la pagina antes de empezar a interactuar con la pagina 
+
+----estructurar proyecto y archivos----
+lo ideal que es mantener lugares especificos para mantener imagenes, archivos css, archivos js en carpetas especificas en lugar de estar ubicando todo en la raiz del proyecto por lo tanto lo ideal este estructurar el proyecto antes de que el proyecto crezca y se haga mas complejo
+vamos a crear la carpeta assets (que este se refiere a los recursos de mi sitio web)
+y vamos a craer una carpeta css (para los archivos css) y una carpeta js (para los archivos js)
+
+recordemos actualizar la ruta para el script y que sepa en donde se ubica
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>orden y estructura</title>
+</head>
+<body>
+    <h1>Hola mundo</h1>
+
+    <p>este es un parrafo</p>
+
+    <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+
+    <script src="./assets/js/app.js"></script>
+</body>
+</html>
+
+
+ahora vamos a ver algo
+supongamos que crear una variable llamada nombre en app.js
+var nombre = 'Rodrigo';
+
+y luego vamos a crear otro archivos js llamado alerts.js en la carpeta assets y lo mostramos en pantalla
+e improtanmos el script en el html
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>orden y estructura</title>
+</head>
+<body>
+    <h1>Hola mundo</h1>
+
+    <p>este es un parrafo</p>
+
+    <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+
+    <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/alerts.js"></script>
+</body>
+</html>
+
+ahora vemos en el navegador que si se muestra como deberia 
+alerts.js:1 Rodrigo
+
+ahora vamos a cambiar el orden de los script en el html a este 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>orden y estructura</title>
+</head>
+<body>
+    <h1>Hola mundo</h1>
+
+    <p>este es un parrafo</p>
+
+    <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+
+    <script src="./assets/js/alerts.js"></script>
+    <script src="./assets/js/app.js"></script>
+</body>
+</html>
+
+
+esto es lo que se muestra en la consola del navegador ahora
+alerts.js:1 Uncaught ReferenceError: nombre is not defined
+(anonymous) @ alerts.js:1
+
+recordemos que creamos la variable en app.js y la mostramos en alets.js, lo que se quiere dar a entender con este ejemplo es tomar muy en cuenta que vamos a ponerantes y que vamos a poner despues
+por esto es muy improtante mantener un orden porque se puede causar errores de esta manera
+por cierto solo usamos la palabra reservada var para el ejemplo pero var no este recomedable usarlo porque pertenece al objeto window de js lo que nos permite correr js en el navegador basta con poner en la consola la palabra "window" y empezar a ver lo que contiene la variable declarada con var (esto no pasa con let por esto es tan recomedable usar let en lugar de var)

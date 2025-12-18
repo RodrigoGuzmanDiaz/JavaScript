@@ -1,0 +1,68 @@
+ahora vamos a ver el principal problema de inicializar con var
+el principal problema que tenemos que este al inicializar con var puede sobreescribir o reemplazar valor o propiedades del objeto global window (que es el que nos ayuda a ejecutar js en el navegador)
+por ejemplo en ela consola de nuestra pagina escribamos window.outerWidth y nos devolverá un valor
+en mi caso me muestra 1536
+window.outerWidth
+1536
+
+ahora vamos a crear una variable inicializada con var con el mismo nombre (tiene que ser exactamente igual por JavaScript es case sensitive esto quiere decir a que por ejemplo si tenemos una variable outerwidth sin mayuscula sera otra variable compeltamente diferente)
+por ejemplo esto 
+
+var outerWidth = 1000000
+
+ahora vamos a la consola del navegador y escribimos window.outerWidth
+window.outerWidth
+1000000
+
+obviamente sabemos que esto es imposible pero este es un gran problema cosas propias del navegador puedes ser sobreescritas
+
+cosa que no pasa con let, modifiquemos la varaible de var a let
+
+let outerWidth = 1000000
+
+ahora veamos el window.outerWidth en la consola 
+window.outerWidth
+1536
+
+vemos que no se sobreescribio por lo tanto no hay problema
+
+ahora veamos un ultimo ejemplo 
+
+supongamos que tenemos esto en app.js
+
+var miNombre = 'Rodrigo';
+
+pero al estar desarrollando quiero poner un console.log antes de la inicializacion de la varaible (esto es para ejemplificar un problema porque esto puede llegar a ocurrir cuando el codigo es muy extenso y no nos damos cuenta)
+ahora app.js tiene esto
+
+console.log(miNombre);
+/*
+    resto del codigo
+*/
+var miNombre = 'Rodrigo';
+
+al ver la consola vemos esto 
+app.js:1 undefined
+
+cuando usamos var y una varaible no tiene valor la poner como undefined pero no hace mas que eso
+ahora supongamos que que no nos damos cuenta y concatenamos algo mas
+console.log(miNombre+' Guzman');
+
+var miNombre = 'Rodrigo';
+
+la soncola devolverá esto:
+app.js:1 undefined Guzman
+
+vemos el undefined es como un string y por eso nos permite concatenar esto de por si no esta bien porque deberia de devolver un error pero esto pasa si cambiamos de var a let
+ahora app.js tiene esto:
+console.log(miNombre+' Guzman');
+
+let miNombre = 'Rodrigo';
+
+esto nos muestra la consola del navegador:
+app.js:1 Uncaught ReferenceError: Cannot access 'miNombre' before initialization
+(anonymous) @ app.js:1
+
+esto como tal si esta bien que no devuelva un error y nos ayuda a detectar error porque lo que nos devolvía var antes no era un error como tal,
+en que casos usar var? es bueno usarlo para aumentar la compatibilidad con navegadores viejo pero fuera de eso no es para nada recomendable
+
