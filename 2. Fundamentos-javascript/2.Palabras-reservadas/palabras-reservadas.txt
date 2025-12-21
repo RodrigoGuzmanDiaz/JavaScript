@@ -1,0 +1,23 @@
+antes que nada vamos a decir el porque no debemos poner palabras capitalizadas en los nombres de lo archivos porque por ejemplo que este archivo se llama palabras-reservadas.js y no Palabras-Reservadas.js
+si en el html ponemos <script src="./assets/js/Palabras-Reservadas.js"></script> y el archivo se llama palabras-reservadas.js en el navegador seguirá funcionando porque los sistemas de archivos de Windows y Mac no son case sensitive, es decir, no distinguen entre mayusculas y minusculas en los nombres de archivos es por eso que sigue funcionando en el navegador
+pero si desplegamos nuestra aplicacion en servidores como linux, que si son case sensitive, es decir, distinguen entre mayusculas y minusculas en los nombres de archivos, entonces el navegador no podra encontrar el archivo y no funcionara nuestra aplicacion
+otros servidores que si son case sensitive se encuentra en la nube como AWS, Google Cloud, Azure, etc
+por eso es una buena practica siempre nombrar los archivos en minusculas y usar guiones medios o bajos para separar las palabras en lugar de usar mayusculas
+de esta manera evitamos problemas de compatibilidad entre diferentes sistemas de archivos y servidores
+tampoco poner caracteres expeciales espacios, ñ, tildes, etc en los nombres de los archivos porque tambien pueden causar problemas de compatibilidad en diferentes sistemas de archivos y servidores
+un ejemplo de esto seria si tenemos un archivo llamado MiArchivo.js y en el html ponemos <script src="./Miarchivo.js"></script> en Windows y Mac funcionara pero en Linux no funcionara
+
+
+ahora si vamos a ver las palabras reservadas en Javascript
+las palabras reservadas son aquellas que tienen un significado especial en el lenguaje y no pueden ser utilizadas como nombres de variables, funciones, clases, etc
+algunas de las palabras reservadas en Javascript son: var, let, const, if, else, for, while, function, return, class, etc
+let const = 5; // esto dara un error porque const es una palabra reservada y no puede ser utilizada como nombre de variable
+el error que nos dara sera:
+SyntaxError: Unexpected token 'const'
+
+lo cual indica que hay un error de sintaxis inesperado debido al uso incorrecto de la palabra reservada const
+otra palabra reservada es function 
+esto tambien dara un error porque function es una palabra reservada y no puede ser utilizada como nombre de variable
+let function = 10; 
+
+es facil identificar ya que en los editores de texto o IDEs las palabras reservadas suelen estar resaltadas en un color diferente al resto del codigo, lo que facilita su identificacion visual
