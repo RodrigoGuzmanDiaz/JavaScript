@@ -1,0 +1,6 @@
+me gustaria que realizaras ejercicios de por ejemplo 
+crea una array que se llame peliculas y que contengas los elementos Starwars, Avengers, Megama
+
+otro tipo de ejercicio seria que tu pongas un array y luego me pidas a usar un console.log para imprimir un valor en especifico
+por ejemplo tengo un array de let videoJuegos = ['Kingdom Hearts', 'Gears of war', 'Halo'];
+y luego pedir que se accedar al valor de Halo por ejemplo algo asi 
